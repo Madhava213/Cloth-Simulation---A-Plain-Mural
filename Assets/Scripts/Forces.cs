@@ -16,7 +16,7 @@ public class Forces : MonoBehaviour
         
     }
 
-   /* void VelUpdate(GameObject[] spheres)
+    void VelUpdate(GameObject[] spheres)
     {
         int sphereLen = spheres.Length();
         Vector3 velBuffer[] = new Vector3[sphereLen];
@@ -29,7 +29,6 @@ public class Forces : MonoBehaviour
         }
 
         //update velocities before positions.
-        float forceBuffer[sphereLen];
         //horizontal
         for(int i = 0; i < ; i++)
         {
@@ -42,10 +41,10 @@ public class Forces : MonoBehaviour
                 float v1 = e.dot(spheres[i * (sphereLen / 2) + j].GetComponent<Rigidbody>().velocity);
                 float v2 = e.dot(spheres[i * (sphereLen / 2) + j + 1].GetComponent<Rigidbody>().velocity);
                 float ks = 1; //spring constant, can tweak
-                float kd = .1; //dampening, can tweak
-                float f = -ks * (/*rest position*//*-l) - kd * (v1 - v2);
-                forceBuffer[i * (sphereLen / 2) + j] = f; //times e times dt
-                forceBuffer[i * (sphereLen / 2) + j + 1] = -f; //times e times dt
+                float kd = 0.1f; //dampening, can tweak
+                Vec3 f = -ks * (spheres[i * (sphereLen / 2) + j].transform.position-l) - kd * (v1 - v2);
+                velBuffer[i * (sphereLen / 2) + j] = f; //times e times dt
+                velBuffer[i * (sphereLen / 2) + j + 1] = -f; //times e times dt
             }
         }
 
@@ -62,9 +61,9 @@ public class Forces : MonoBehaviour
                 float v2 = e.dot(spheres[i + j * (sphereLen / 2) + 1].GetComponent<Rigidbody>().velocity);
                 float ks = 1; //spring constant, can tweak
                 float kd = .1; //dampening, can tweak
-                float f = -ks * (/*rest position*//*-l) - kd * (v1 - v2);
-                forceBuffer[i + j * (sphereLen / 2)] = f; //times e times dt
-                forceBuffer[i + j * (sphereLen / 2) + 1] = -f; //times e times dt
+                Vec3 f = -ks * (spheres[i + j * (sphereLen / 2)].transform.position - l) - kd * (v1 - v2);
+                velBuffer[i + j * (sphereLen / 2)] = f; //times e times dt
+                velBuffer[i + j * (sphereLen / 2) + 1] = -f; //times e times dt
             }
         }
 
@@ -74,5 +73,5 @@ public class Forces : MonoBehaviour
 
         //set velocity to new velocity
 
-    } //velUpdate*/
+    } //velUpdate
 }
