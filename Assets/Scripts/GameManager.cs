@@ -25,8 +25,6 @@ public class GameManager : MonoBehaviour
                 GameObject newSphere = Instantiate(Sphere, position, Quaternion.identity);
                 newSphere.name = "Sphere " + ((i*numSpheres/2)+j);
                 spheres[((i*numSpheres/2)+j)] = newSphere;
-                Debug.Log((i * numSpheres / 2) + j);
-                Debug.Log(((numSpheres/2) * (numSpheres/2)));
             }
         }
 
@@ -34,17 +32,20 @@ public class GameManager : MonoBehaviour
         {
             for (int j = 0; j < numSpheres / 2; j++)
             {
-                if (i + 1 < spheresLength)
+                // Vertical Lines
+                if ((i * numSpheres / 2) + j + 1 < spheresLength)
                 {
-                    line.addPoints(new GameObject[2] { spheres[i], spheres[i + 1] });
-                    LineController newLine = Instantiate(line, spheres[i].transform.position, Quaternion.identity);
-                    newLine.name = spheres[i].name + " to " + spheres[i + 1].name;
+                    line.addPoints(new GameObject[2] { spheres[(i * numSpheres / 2) + j], spheres[(i * numSpheres / 2) + j + 1] });
+                    LineController newLine = Instantiate(line, spheres[(i * numSpheres / 2) + j].transform.position, Quaternion.identity);
+                    newLine.name = spheres[(i * numSpheres / 2) + j].name + " to " + spheres[(i * numSpheres / 2) + j + 1].name;
                 }
-                // if(i+(numSpheres/2) < numSpheres){
-                //     line.addPoints(new GameObject[2] { spheres[i], spheres[i+(numSpheres/2)]});
-                //     LineController newLine = Instantiate(line, spheres[i].transform.position, Quaternion.identity);
-                //     newLine.name = spheres[i].name + " to " + spheres[i+(numSpheres/2)].name;
-                // }
+                
+                // Horizontal Lines
+                if(((i+1) * numSpheres / 2) + j < spheresLength){
+                    line.addPoints(new GameObject[2] { spheres[((i) * numSpheres / 2) + j], spheres[((i+1) * numSpheres / 2) + j]});
+                    LineController newLine = Instantiate(line, spheres[((i) * numSpheres / 2) + j].transform.position, Quaternion.identity);
+                    newLine.name = spheres[((i) * numSpheres / 2) + j].name + " to " + spheres[((i+1) * numSpheres / 2) + j].name;
+                }
             }
         }
     }
