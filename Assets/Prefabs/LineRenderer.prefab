@@ -145,4 +145,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lr: {fileID: 2366096397597303583}
-  points: []
+  points:
+  - {fileID: 0}
+  - {fileID: 0}

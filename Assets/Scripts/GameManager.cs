@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        int spheresLength = numSpheres/ 2 + numSpheres / 2 - 1;
+        int spheresLength = ((numSpheres/2) * (numSpheres/2));
         spheres = new GameObject[spheresLength];
         for (int i = 0; i < numSpheres/2; i++)
         {
@@ -24,22 +24,29 @@ public class GameManager : MonoBehaviour
                 Vector3 position = new Vector3(spawnPos.x + i/sphereDistanceOffset, spawnPos.y + j/sphereDistanceOffset, spawnPos.z);
                 GameObject newSphere = Instantiate(Sphere, position, Quaternion.identity);
                 newSphere.name = "Sphere " + ((i*numSpheres/2)+j);
-                spheres[i + j] = newSphere;
+                spheres[((i*numSpheres/2)+j)] = newSphere;
+                Debug.Log((i * numSpheres / 2) + j);
+                Debug.Log(((numSpheres/2) * (numSpheres/2)));
             }
         }
-        // for (int i = 0; i < numSpheres; i++)
-        // {
-        //     if(i+1 < numSpheres){
-        //         line.addPoints(new GameObject[2] { spheres[i], spheres[i+1]});
-        //         LineController newLine = Instantiate(line, spheres[i].transform.position, Quaternion.identity);
-        //         newLine.name = spheres[i].name + " to " + spheres[i+1].name;
-        //     }
-        //     if(i+(numSpheres/2) < numSpheres){
-        //         line.addPoints(new GameObject[2] { spheres[i], spheres[i+(numSpheres/2)]});
-        //         LineController newLine = Instantiate(line, spheres[i].transform.position, Quaternion.identity);
-        //         newLine.name = spheres[i].name + " to " + spheres[i+(numSpheres/2)].name;
-        //     }
-        // }
+
+        for (int i = 0; i < numSpheres/2; i++)
+        {
+            for (int j = 0; j < numSpheres / 2; j++)
+            {
+                if (i + 1 < spheresLength)
+                {
+                    line.addPoints(new GameObject[2] { spheres[i], spheres[i + 1] });
+                    LineController newLine = Instantiate(line, spheres[i].transform.position, Quaternion.identity);
+                    newLine.name = spheres[i].name + " to " + spheres[i + 1].name;
+                }
+                // if(i+(numSpheres/2) < numSpheres){
+                //     line.addPoints(new GameObject[2] { spheres[i], spheres[i+(numSpheres/2)]});
+                //     LineController newLine = Instantiate(line, spheres[i].transform.position, Quaternion.identity);
+                //     newLine.name = spheres[i].name + " to " + spheres[i+(numSpheres/2)].name;
+                // }
+            }
+        }
     }
 
     // Update is called once per frame
