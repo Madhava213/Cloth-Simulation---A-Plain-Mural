@@ -330,6 +330,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d26c5f4afce89d04cbfd0e5d1f3018d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Sphere: {fileID: 6388030106841517435, guid: 9ddab454eba043c4d92eb18de83d7b7c, type: 3}
+  numSpheres: 50
+  sphereDistanceOffset: 2
+  spawnPos: {x: -5, y: -5, z: 5}
 --- !u!4 &971327081
 Transform:
   m_ObjectHideFlags: 0
