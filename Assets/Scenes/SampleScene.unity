@@ -332,9 +332,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   line: {fileID: 2264548113808747265, guid: 5996f7881a8339244b792975e69a2a34, type: 3}
   Sphere: {fileID: 6388030106841517435, guid: 9ddab454eba043c4d92eb18de83d7b7c, type: 3}
-  numSpheres: 50
+  numSpheres: 25
+  maxDistanceMultiplier: 1
   sphereDistanceOffset: 15
-  spawnPos: {x: 0, y: 0, z: -2}
+  spawnPos: {x: -2, y: 2, z: -2}
+  ks: 1
+  kd: 0.1
+  gravity: {x: 0, y: -0.1, z: 0}
 --- !u!4 &971327081
 Transform:
   m_ObjectHideFlags: 0
