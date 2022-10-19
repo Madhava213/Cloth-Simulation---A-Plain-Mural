@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: e2341a9d03e86ec4290c72b1e22bbc7c, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: cede08c9fc471e64884909cd4bbeaf59, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 1.2455751, g: 0.6560512, b: 0.60736215, a: 1}
+  m_IndirectSpecularColor: {r: 1.2102548, g: 0.883931, b: 0.5953271, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -294,7 +294,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalPosition: {x: 0, y: 1, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -330,10 +330,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d26c5f4afce89d04cbfd0e5d1f3018d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  line: {fileID: 2264548113808747265, guid: 5996f7881a8339244b792975e69a2a34, type: 3}
   Sphere: {fileID: 6388030106841517435, guid: 9ddab454eba043c4d92eb18de83d7b7c, type: 3}
   numSpheres: 50
-  sphereDistanceOffset: 2
-  spawnPos: {x: -5, y: -5, z: 5}
+  sphereDistanceOffset: 15
+  spawnPos: {x: 0, y: 0, z: -2}
 --- !u!4 &971327081
 Transform:
   m_ObjectHideFlags: 0
