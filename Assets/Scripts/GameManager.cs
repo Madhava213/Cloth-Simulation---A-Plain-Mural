@@ -125,11 +125,20 @@ public class GameManager : MonoBehaviour
         {
             for (int j = 0; j < numSpheres-1; j++) //fill velocity buffer
             {
-                // Add Gravity
-                velBuffer[i, j] += gravity * Time.deltaTime;
 
+                GameObject currSphere = spheres[i,j];
+                GameObject nextSphere = spheres[i,j+1];
+
+                float dist = (currSphere.transform.position - nextSphere.transform.position).magnitude;
+                
+                if (dist < maxDistance)
+                {
+                    // Add Gravity
+                    velBuffer[i, j] += gravity;
+                }
                 // Update Velocities
                 spheres[i, j].GetComponent<Rigidbody>().velocity = velBuffer[i, j];
+
             }
         }
     } //velUpdate
@@ -153,17 +162,18 @@ public class GameManager : MonoBehaviour
                 } else if (dist < maxDistance)
                 {
                     changeDir = (nextSphere.transform.position - currSphere.transform.position).normalized;
+                    error = 0;
                 }
 
                 Vector3 changeAmount = changeDir * error;
                 if (((i*numSpheres)+ j + 2) % numSpheres != 0){
-                    currSphere.transform.position -= changeAmount * 0.5f;
+                    currSphere.transform.position -= changeAmount;
                     spheres[i,j] = currSphere;
-                    nextSphere.transform.position += changeAmount * 0.5f;
+                    nextSphere.transform.position += changeAmount;
                     spheres[i,j + 1] = nextSphere;
                 }
                 else{
-                    currSphere.transform.position -= changeAmount * 0.5f;
+                    currSphere.transform.position -= changeAmount;
                     spheres[i,j] = currSphere;
                 }
             }
@@ -187,11 +197,12 @@ public class GameManager : MonoBehaviour
                 } else if (dist < maxDistance)
                 {
                     changeDir = (nextSphere.transform.position - currSphere.transform.position).normalized;
+                    error = 0;
                 }
                 Vector3 changeAmount = changeDir * error;
-                currSphere.transform.position -= changeAmount * 0.5f;
+                currSphere.transform.position -= changeAmount;
                 spheres[i,j] = currSphere;
-                nextSphere.transform.position += changeAmount * 0.5f;
+                nextSphere.transform.position += changeAmount;
                 spheres[i+1,j] = nextSphere;
             }
         }
