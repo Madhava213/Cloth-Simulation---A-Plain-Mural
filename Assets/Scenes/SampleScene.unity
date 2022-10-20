@@ -228,6 +228,7 @@ GameObject:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
+  - component: {fileID: 963194229}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -301,6 +302,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &963194229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2e2452ffdf6b2841918d54e0179fe46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 6429172152092409253, guid: 60fc02c77c9b8c44d91dfa6e168f1eea, type: 3}
+  shootPower: 200
+  moveOffset: 0.01
 --- !u!1 &971327079
 GameObject:
   m_ObjectHideFlags: 0
@@ -332,13 +348,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   line: {fileID: 2264548113808747265, guid: 5996f7881a8339244b792975e69a2a34, type: 3}
   Sphere: {fileID: 6388030106841517435, guid: 9ddab454eba043c4d92eb18de83d7b7c, type: 3}
-  numSpheres: 25
+  Holder: {fileID: 7945894707929507004, guid: 55e31338b2cedbc4fa7bc1f052194283, type: 3}
+  numSpheres: 10
   maxDistanceMultiplier: 1
-  sphereDistanceOffset: 15
-  spawnPos: {x: -2, y: 2, z: -2}
-  ks: 1
-  kd: 0.1
-  gravity: {x: 0, y: -0.1, z: 0}
+  sphereDistanceOffset: 35
+  restLength: 0.028571429
+  spawnPos: {x: -0.1, y: 1.25, z: -4}
+  ks: 0.7
+  kd: 1
+  airDensity: 1
+  airDrag: 1
+  speedFactor: 13
+  gravity: {x: 0, y: -0.01, z: 0}
 --- !u!4 &971327081
 Transform:
   m_ObjectHideFlags: 0
