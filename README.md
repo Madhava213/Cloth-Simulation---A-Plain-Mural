@@ -31,7 +31,7 @@ ASWD/Arrow Keys : Move Around <br />
 q : Quit Application <br />
 
 ## Difficulties
-
+We had difficulties applying the forces in a way that looked natural. Specifically, we had trouble with gravity pulling the cloth beyond what its maximum length should be, making the cloth stretch infinitely. First, we tried to add a correction if the cloth was stretched past its maximum length, but that made the cloth seem to "bounce" at the bottom because the forces were rapidly being applied and removed. Then, we checked the force of the elasticity of the cloth to make sure it was applied correctly. Once we applied the elasticity force, the cloth stopped both stretching infinitely and rapidly seeming to bounce.
 ## Video
 
 
