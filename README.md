@@ -6,9 +6,12 @@
 -   Skylar Volden
 
 ## Description
-
+We created a long banner that hangs in midair and reacts to being pushed, gravity, and wind simulation, with air drag. The camera can be moved freely, allowing the user to closely examine the movement of the cloth.
 ## Features
-
+- Realistic cloth motion with air drag<br />
+- User can shoot a ball to interact with the cloth <br />
+- User can move the camera freely around the scene <br />
+- A fan can be turned on, with multiple settings to showcase different amounts of wind. This fan moves with the camera, and therefore can be positioned in real time. <br />
 ## Code
 
 We are using Unity3D Game Engine for the implementation of this project.
