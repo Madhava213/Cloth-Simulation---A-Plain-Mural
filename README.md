@@ -18,14 +18,14 @@ We are using Unity3D Game Engine for the implementation of this project.
 Use the button below to navigate to the source code.
 Find the 'Build' folder and run the executable inside.
 
-Controls :
-Mouse : Look Around
-ASWD/Arrow Keys : Move Around
-1 : Fan OFF
-2 : Fan LOW
-3 : Fan MID
-4 : Fan HIGH
-q : Quit Application
+Controls : <br />
+Mouse : Look Around <br />
+ASWD/Arrow Keys : Move Around <br />
+1 : Fan OFF <br />
+2 : Fan LOW <br />
+3 : Fan MID <br />
+4 : Fan HIGH <br />
+q : Quit Application <br />
 
 ## Difficulties
 
